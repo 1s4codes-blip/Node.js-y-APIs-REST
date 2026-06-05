@@ -23,7 +23,15 @@ export const bd_carrito = [
                     size: "200gr",
                     stock: 6
                 }
-            ]
+            ],
+        empleados: [
+            {
+                id: 1,
+                nombre: "Carlos",
+                cargo: "Desarrollador",
+                salario: 3000000
+            }
+        ]
 
     }
 
