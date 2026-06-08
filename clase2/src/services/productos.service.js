@@ -1,4 +1,4 @@
-import { bd_carrito } from "../data/carrito.data.js";
+import { bd_carrito, bd_productos } from "../data/carrito.data.js";
 
 
 let mitbl = bd_carrito[0].productos;
@@ -31,3 +31,32 @@ export const Calcular_Total_Carrito = (lProductos) => {
     }
     return total;
 }
+
+export const Listar_Todos = () => {
+    return bd_productos;
+};
+
+export const Obtener_Por_Id = (p_id) => {
+    return bd_productos.find(x => x.id == p_id);
+};
+
+export const Buscar_Por_Nombre = (p_nombre) => {
+    return bd_productos.filter(x =>
+        x.nombre.toLowerCase().includes(p_nombre.toLowerCase())
+    );
+};
+
+export const Buscar_Por_Categoria = (p_categoria) => {
+    return bd_productos.filter(x =>
+        x.categoria.toLowerCase() == p_categoria.toLowerCase()
+    );
+};
+
+export const Registrar_Producto = (producto) => {
+    const nuevo = {
+        id: bd_productos.length + 1,
+        ...producto
+    };
+    bd_productos.push(nuevo);
+    return nuevo;
+};
